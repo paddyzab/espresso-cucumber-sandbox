@@ -81,6 +81,17 @@ public class ActivityForm extends ActionBarActivity implements Validator.Validat
         validator.validate();
     }
 
+    @OnClick(R.id.buttonReset)
+    protected void resetForm() {
+        editTextName.setText("");
+        editTextLastName.setText("");
+        editTextCity.setText("");
+        editTextStreetNumber.setText("");
+        editTextPostalNumber.setText("");
+
+        editTextName.requestFocus();
+    }
+
     @Override
     public void onValidationSucceeded() {
         buttonSubmit.setEnabled(false);

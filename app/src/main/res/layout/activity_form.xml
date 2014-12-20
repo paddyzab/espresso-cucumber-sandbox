@@ -68,6 +68,12 @@
                   android:layout_height="wrap_content"
                   android:hint="PLZ"
                   android:inputType="number"/>
+
+        <Button android:id="@+id/buttonReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Form"/>
+
         </LinearLayout>
 
     <Button android:id="@+id/buttonSubmit"

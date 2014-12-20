@@ -28,14 +28,8 @@ public class ActivityLogin extends ActionBarActivity implements Validator.Valida
     @InjectView(R.id.editTextPassword)
     protected EditText editTextPassword;
 
-
     @InjectView(R.id.buttonLogin)
     protected Button buttonLogin;
-
-    @OnClick(R.id.buttonLogin)
-    protected void submit() {
-       validator.validate();
-    }
 
     private Validator validator;
     private EditText currentEditTextWithError;
@@ -49,6 +43,18 @@ public class ActivityLogin extends ActionBarActivity implements Validator.Valida
 
         validator = new Validator(this);
         validator.setValidationListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        buttonLogin.setEnabled(true);
+    }
+
+    @OnClick(R.id.buttonLogin)
+    protected void submit() {
+        validator.validate();
     }
 
     @Override

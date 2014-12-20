@@ -16,8 +16,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ActivityForm"/>
-        <activity android:name=".ActivityResult"/>
+        <activity android:name=".ActivityForm"
+                  android:launchMode="singleTop"/>
+                  android:launchMode="singleTop"/>
+        <activity android:name=".ActivityResult" android:parentActivityName=".ActivityForm">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.paddy.cuespton.cuespton.ActivityForm"/>
+        </activity>
     </application>
 
 </manifest>

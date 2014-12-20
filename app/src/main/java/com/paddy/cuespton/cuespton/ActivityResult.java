@@ -11,11 +11,23 @@ public class ActivityResult extends ActionBarActivity {
     @InjectView(R.id.textViewResult)
     protected TextView textViewResult;
 
+    private FormData formData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
         ButterKnife.inject(this);
+
+        formData = getIntent().getParcelableExtra("FORM_DATA");
+
+        textViewResult.setText(" Hi: " +
+                formData.getName() + " "
+                + formData.getLastName() + " \n From: "
+                + formData.getCity() + ", "
+                + formData.getStreetName() + " "
+                + formData.getStreetNumber() +
+                ".\n And Welcome!");
     }
 }

@@ -47,6 +47,7 @@ public class ActivityForm extends ActionBarActivity implements Validator.Validat
 
     private Validator validator;
     private EditText currentEditTextWithError;
+    private FormData formData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,15 @@ public class ActivityForm extends ActionBarActivity implements Validator.Validat
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (formData != null) {
+            editTextName.setText(formData.getName());
+            editTextLastName.setText(formData.getLastName());
+            editTextCity.setText(formData.getCity());
+            editTextStreet.setText(formData.getStreetName());
+            editTextStreetNumber.setText(String.valueOf(formData.getStreetNumber()));
+            editTextPostalNumber.setText(String.valueOf(formData.getPostalNumber()));
+        }
 
         buttonSubmit.setEnabled(true);
     }
@@ -93,7 +103,16 @@ public class ActivityForm extends ActionBarActivity implements Validator.Validat
     }
 
     private void startResultActivity() {
-        Intent resultIntent = new Intent(this, ActivityResult.class);
+        formData = new FormData();
+        formData.setName(editTextName.getText().toString());
+        formData.setLastName(editTextLastName.getText().toString());
+        formData.setStreetName(editTextStreet.getText().toString());
+        formData.setCity(editTextCity.getText().toString());
+        formData.setStreetNumber(Integer.valueOf(editTextStreetNumber.getText().toString()));
+        formData.setPostalNumber(Integer.valueOf(editTextPostalNumber.getText().toString()));
+
+        final Intent resultIntent = new Intent(this, ActivityResult.class);
+        resultIntent.putExtra("FORM_DATA", formData);
         startActivity(resultIntent);
     }
 }

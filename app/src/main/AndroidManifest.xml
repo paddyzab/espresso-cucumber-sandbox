@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".ActivityForm"/>
+        <activity android:name=".ActivityResult"/>
     </application>
 
 </manifest>

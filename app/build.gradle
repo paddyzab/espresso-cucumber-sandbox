@@ -11,10 +11,22 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        Uats {
+            testInstrumentationRunner "com.paddy.cuespton.cuespton.test.Instrumentation"
+            // passing instrumentation parameters
+            buildConfigField "int", "FOO", "42"
+        }
+
+        Its {
+            testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
         }
     }
 }
@@ -25,4 +37,11 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:6.0.0'
     compile 'com.mobsandgeeks:android-saripaar:1.0.3'
+
+    //Testing dependencies
+    androidTestCompile 'info.cukes:cucumber-core:1.2.0-1-SNAPSHOT'
+    androidTestCompile 'info.cukes:cucumber-java:1.2.0-1-SNAPSHOT'
+    androidTestCompile 'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT'
+    androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r3'
+    androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
 }

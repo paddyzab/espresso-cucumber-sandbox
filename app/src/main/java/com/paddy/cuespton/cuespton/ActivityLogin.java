@@ -1,8 +1,8 @@
 package com.paddy.cuespton.cuespton;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +16,7 @@ import com.mobsandgeeks.saripaar.annotation.Required;
 import com.mobsandgeeks.saripaar.annotation.TextRule;
 
 
-public class ActivityLogin extends ActionBarActivity implements Validator.ValidationListener {
+public class ActivityLogin extends Activity implements Validator.ValidationListener {
 
     @Required(order = 0, message = "This field is required.")
     @Email(order = 1, message = "Enter valid email.")

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.paddy.cuespton.cuespton"
-        minSdkVersion 19
+        minSdkVersion 18
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -19,15 +19,19 @@ android {
         }
     }
     productFlavors {
-        Uats {
+        uats {
             testInstrumentationRunner "com.paddy.cuespton.cuespton.test.Instrumentation"
             // passing instrumentation parameters
             buildConfigField "int", "FOO", "42"
         }
 
-        Its {
+        its {
             testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
         }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
     }
 }
 

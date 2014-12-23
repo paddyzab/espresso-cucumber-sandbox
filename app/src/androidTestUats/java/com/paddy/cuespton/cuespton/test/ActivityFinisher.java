@@ -1,4 +1,4 @@
-package com.paddy.cuespton.cuespton;
+package com.paddy.cuespton.cuespton.test;
 
 import android.app.Activity;
 import android.os.Handler;

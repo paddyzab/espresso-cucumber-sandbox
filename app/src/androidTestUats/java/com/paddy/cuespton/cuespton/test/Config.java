@@ -1,7 +1,8 @@
-package com.paddy.cuespton.cuespton;
+package com.paddy.cuespton.cuespton.test;
 
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
+import com.paddy.cuespton.cuespton.ActivityLogin;
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -34,7 +35,6 @@ public class Config extends ActivityInstrumentationTestCase2 {
     }
 
     private void initializeEspresso() {
-//        Espresso.setFailureHandler(new CustomFailureHandler());
         startFirstActivity();
     }
 

@@ -1,4 +1,4 @@
-package com.paddy.cuespton.cuespton.steps;
+package com.paddy.cuespton.cuespton.test.steps;
 
 import com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers;
 import com.paddy.cuespton.cuespton.R;

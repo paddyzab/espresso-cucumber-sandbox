@@ -1,7 +1,5 @@
-    @bucket-1
-    Feature: Button click
+@bucket-1
+Feature: Login
 
-      Background:
-
-      Scenario: Click the button
-        Then I click on button
+    Scenario: Perform login with the username and password
+        Then I click on login button

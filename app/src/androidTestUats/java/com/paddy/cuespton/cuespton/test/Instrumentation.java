@@ -1,4 +1,4 @@
-package com.paddy.cuespton.cuespton;
+package com.paddy.cuespton.cuespton.test;
 
 import android.os.Bundle;
 import com.google.android.apps.common.testing.testrunner.GoogleInstrumentation;

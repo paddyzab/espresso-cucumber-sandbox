@@ -21,12 +21,15 @@ android {
     productFlavors {
         uats {
             testInstrumentationRunner "com.paddy.cuespton.cuespton.test.Instrumentation"
-            // passing instrumentation parameters
-            buildConfigField "int", "FOO", "42"
         }
 
         its {
             testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+        }
+
+        full {
+            applicationId "com.paddy.app.cuespton"
+            versionName "1.0"
         }
     }
 

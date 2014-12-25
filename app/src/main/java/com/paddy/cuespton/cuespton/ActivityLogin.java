@@ -18,6 +18,9 @@ import com.mobsandgeeks.saripaar.annotation.TextRule;
 
 public class ActivityLogin extends Activity implements Validator.ValidationListener {
 
+
+    //TODO add text watchers to validate the edit text fill state
+
     @Required(order = 0, message = "This field is required.")
     @Email(order = 1, message = "Enter valid email.")
     @InjectView(R.id.editTextLogin)
@@ -37,7 +40,7 @@ public class ActivityLogin extends Activity implements Validator.ValidationListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_login);
+        setContentView(R.layout.activity_login);
 
         ButterKnife.inject(this);
 
@@ -79,7 +82,7 @@ public class ActivityLogin extends Activity implements Validator.ValidationListe
     }
 
     private void startFormActivity() {
-        Intent formActivityIntent = new Intent(this, ActivityForm.class);
+        Intent formActivityIntent = new Intent(this, ActivityCountrySelect.class);
         startActivity(formActivityIntent);
     }
 }

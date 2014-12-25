@@ -35,10 +35,6 @@ public class EditTextSteps {
 
             @Override
             public boolean matchesSafely(View view) {
-                if(view == null) {
-                    return false;
-                }
-
                 if (!(view instanceof EditText)) {
                     return false;
                 }

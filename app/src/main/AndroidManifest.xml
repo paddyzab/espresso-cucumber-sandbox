@@ -18,7 +18,9 @@
 
         <activity android:name=".ActivityForm"
                   android:launchMode="singleTop"/>
-                  android:launchMode="singleTop"/>
+
+        <activity android:name=".ActivityCountrySelect"/>
+
         <activity android:name=".ActivityResult" android:parentActivityName=".ActivityForm">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"

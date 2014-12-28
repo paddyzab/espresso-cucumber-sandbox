@@ -17,6 +17,8 @@ public class ActivityCountrySelect extends Activity implements AdapterView.OnIte
     private List<String> countries = new ArrayList<>();
     private AdapterCountrySelect adapterCountrySelect;
 
+    private FormData formData;
+
     @InjectView(R.id.listViewCounties)
     protected ListView listViewCountries;
 
@@ -33,10 +35,20 @@ public class ActivityCountrySelect extends Activity implements AdapterView.OnIte
         listViewCountries.setOnItemClickListener(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (formData != null) {
+            adapterCountrySelect.setSelectedIndex(countries.indexOf(formData.getCountry()));
+            adapterCountrySelect.notifyDataSetInvalidated();
+        }
+    }
+
     @OnClick(R.id.buttonConfirm)
     protected void confirm() {
         //TODO: validation is still missing
-        final FormData formData = new FormData();
+        formData = new FormData();
         formData.setCountry(adapterCountrySelect.getSelectedCountry());
 
         final Intent resultIntent = new Intent(this, ActivityForm.class);

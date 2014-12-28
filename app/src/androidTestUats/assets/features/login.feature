@@ -6,6 +6,12 @@ Feature: Login
         And I type as password qwerty12
         Then I click on login button
         Then I select country "Greece"
+        Then I expect country "Greece" to be selected
+
+    Scenario: Selecting a country
+
+    Scenario: Selecting a second country removed first selection
+
 
     Scenario: Display error when user is not using email as login
         Given I type as login paddy

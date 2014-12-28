@@ -8,6 +8,7 @@ import java.util.List;
 public class AdapterCountrySelect extends BaseAdapter {
 
     private List<String> countries;
+    private int selectedIndex = -1;
 
     public AdapterCountrySelect(List<String> countries) {
         this.countries = countries;
@@ -19,13 +20,17 @@ public class AdapterCountrySelect extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public String getItem(int position) {
         return countries.get(position);
     }
 
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    public void setSelectedIndex(int index){
+        selectedIndex = index;
     }
 
     @Override
@@ -40,6 +45,7 @@ public class AdapterCountrySelect extends BaseAdapter {
         }
 
         listItem.updateWithCountry(countries.get(position));
+        listItem.updateSelection(selectedIndex == position);
 
         return listItem;
     }

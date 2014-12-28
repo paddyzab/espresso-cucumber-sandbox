@@ -3,13 +3,12 @@ package com.paddy.cuespton.cuespton;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.CheckBox;
-import android.widget.Checkable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class ViewCountrySelect extends FrameLayout implements Checkable {
+public class ViewCountrySelect extends FrameLayout {
 
     @InjectView(R.id.textViewCountry)
     protected TextView textViewCountry;
@@ -35,18 +34,7 @@ public class ViewCountrySelect extends FrameLayout implements Checkable {
         textViewCountry.setText(country);
     }
 
-    @Override
-    public void setChecked(boolean isChecked) {
-        checkboxSelectCountry.setChecked(isChecked);
-    }
-
-    @Override
-    public boolean isChecked() {
-        return checkboxSelectCountry.isChecked();
-    }
-
-    @Override
-    public void toggle() {
-        checkboxSelectCountry.toggle();
+    public void updateSelection(boolean isSelected) {
+        checkboxSelectCountry.setChecked(isSelected);
     }
 }

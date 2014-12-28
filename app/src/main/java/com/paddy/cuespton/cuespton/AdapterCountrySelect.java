@@ -33,6 +33,10 @@ public class AdapterCountrySelect extends BaseAdapter {
         selectedIndex = index;
     }
 
+    public String getSelectedCountry() {
+        return countries.get(selectedIndex);
+    }
+
     @Override
     public View getView(int position, View view, ViewGroup parent) {
 

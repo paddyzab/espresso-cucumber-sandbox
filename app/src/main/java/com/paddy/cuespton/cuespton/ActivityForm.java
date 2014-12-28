@@ -56,6 +56,8 @@ public class ActivityForm extends Activity implements Validator.ValidationListen
         setContentView(R.layout.activity_form);
         ButterKnife.inject(this);
 
+        formData = getIntent().getParcelableExtra("FORM_DATA");
+
         validator = new Validator(this);
         validator.setValidationListener(this);
     }
@@ -69,8 +71,8 @@ public class ActivityForm extends Activity implements Validator.ValidationListen
             editTextLastName.setText(formData.getLastName());
             editTextCity.setText(formData.getCity());
             editTextStreet.setText(formData.getStreetName());
-            editTextStreetNumber.setText(String.valueOf(formData.getStreetNumber()));
-            editTextPostalNumber.setText(String.valueOf(formData.getPostalNumber()));
+            editTextStreetNumber.setText(formData.getStreetNumber() > 0 ? String.valueOf(formData.getStreetNumber()) : "");
+            editTextPostalNumber.setText(formData.getPostalNumber() > 0 ? String.valueOf(formData.getPostalNumber()) : "");
         }
 
         buttonSubmit.setEnabled(true);
@@ -114,7 +116,6 @@ public class ActivityForm extends Activity implements Validator.ValidationListen
     }
 
     private void startResultActivity() {
-        formData = new FormData();
         formData.setName(editTextName.getText().toString());
         formData.setLastName(editTextLastName.getText().toString());
         formData.setStreetName(editTextStreet.getText().toString());

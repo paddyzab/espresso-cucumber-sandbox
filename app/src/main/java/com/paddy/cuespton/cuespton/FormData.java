@@ -11,6 +11,7 @@ public class FormData implements Parcelable {
     private int streetNumber;
     private String city;
     private int postalNumber;
+    private String country;
 
     public FormData() {
     }
@@ -28,6 +29,7 @@ public class FormData implements Parcelable {
         dest.writeInt(this.streetNumber);
         dest.writeString(this.city);
         dest.writeInt(this.postalNumber);
+        dest.writeString(this.country);
     }
 
     private FormData(Parcel in) {
@@ -37,6 +39,7 @@ public class FormData implements Parcelable {
         this.streetNumber = in.readInt();
         this.city = in.readString();
         this.postalNumber = in.readInt();
+        this.country = in.readString();
     }
 
     public static final Parcelable.Creator<FormData> CREATOR = new Parcelable.Creator<FormData>() {
@@ -93,8 +96,15 @@ public class FormData implements Parcelable {
         return postalNumber;
     }
 
-
     public void setPostalNumber(int postalNumber) {
         this.postalNumber = postalNumber;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

@@ -25,7 +25,9 @@ public class ActivityResult extends ActionBarActivity {
         textViewResult.setText(" Hi: " +
                 formData.getName() + " "
                 + formData.getLastName() + " \n From: "
+                + formData.getCountry() + ", "
                 + formData.getCity() + ", "
+                + formData.getPostalNumber() + ", "
                 + formData.getStreetName() + " "
                 + formData.getStreetNumber() +
                 ".\n And Welcome!");

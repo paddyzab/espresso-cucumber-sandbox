@@ -36,8 +36,11 @@ public class ActivityCountrySelect extends Activity implements AdapterView.OnIte
     @OnClick(R.id.buttonConfirm)
     protected void confirm() {
         //TODO: validation is still missing
+        final FormData formData = new FormData();
+        formData.setCountry(adapterCountrySelect.getSelectedCountry());
+
         final Intent resultIntent = new Intent(this, ActivityForm.class);
-        resultIntent.putExtra("FORM_COUNTRY", adapterCountrySelect.getSelectedCountry());
+        resultIntent.putExtra("FORM_DATA", formData);
         startActivity(resultIntent);
     }
 

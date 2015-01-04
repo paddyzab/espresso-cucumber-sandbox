@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "To run this script you need to have gradle/gradlew command line wrapper installed >> https://github.com/dougborg/gdub, it is really nice one try it! \n\n"
+
+echo "Running acceptance tests, irestriced to tag \"$1\" form your suite."
+
+gw connectedAndroidTestUatsDebug -Ptags=@$1

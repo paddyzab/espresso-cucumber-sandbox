@@ -19,6 +19,7 @@ Feature: Login
         And I click on login button
         Then I expect error on login input field "Enter valid email."
 
+    @fail
     Scenario: Login button is disabled if both fields are not filled in
         Given I type as login paddy@zab.com
         Then I expect login button to be disabled

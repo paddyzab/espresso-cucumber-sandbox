@@ -1,6 +1,7 @@
 @bucket-1
 Feature: Login
 
+    @new
     Scenario: Perform login with the username and password
         Given I type as login paddy@zab.com
         And I type as password qwerty12
@@ -8,10 +9,9 @@ Feature: Login
         Then I select country "Greece"
         Then I expect country "Greece" to be selected
 
-    Scenario: Selecting a country
+    #Scenario: Selecting a country adds
 
-    Scenario: Selecting a second country removed first selection
-
+    #Scenario: Selecting a second country removed first selection
 
     Scenario: Display error when user is not using email as login
         Given I type as login paddy

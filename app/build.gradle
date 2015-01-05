@@ -53,9 +53,9 @@ dependencies {
             'com.mobsandgeeks:android-saripaar:1.0.3'
 
     //Testing dependencies
-    androidTestCompile 'info.cukes:cucumber-core:1.2.0-1-SNAPSHOT',
-                        'info.cukes:cucumber-java:1.2.0-1-SNAPSHOT',
-                        'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT',
+    androidTestCompile 'info.cukes:cucumber-core:1.2.0',
+                        'info.cukes:cucumber-java:1.2.0',
+                        'info.cukes:cucumber-android:1.2.0',
                         'com.jakewharton.espresso:espresso:1.1-r3',
                         'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
 }

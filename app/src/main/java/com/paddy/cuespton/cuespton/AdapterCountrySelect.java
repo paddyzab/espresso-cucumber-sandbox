@@ -33,6 +33,14 @@ public class AdapterCountrySelect extends BaseAdapter {
         selectedIndex = index;
     }
 
+    public int getSelectedIndex() {
+        if (selectedIndex > 0) {
+            return countries.indexOf(countries.get(selectedIndex));
+        } else {
+            return selectedIndex;
+        }
+    }
+
     public String getSelectedCountry() {
         return countries.get(selectedIndex);
     }

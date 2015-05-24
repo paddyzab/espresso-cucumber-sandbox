@@ -14,10 +14,19 @@
             android:text="Confirm"
             android:layout_alignParentBottom="true"/>
 
+    <TextView android:id="@+id/error_window"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_above="@id/buttonConfirm"
+              android:textColor="@android:color/holo_red_light"
+              android:textSize="18sp"
+              />
+
+
     <ListView android:id="@+id/listViewCounties"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/buttonConfirm"
+            android:layout_above="@id/error_window"
             android:choiceMode="singleChoice"/>
 
 </RelativeLayout>

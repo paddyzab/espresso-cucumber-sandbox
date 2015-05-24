@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -21,6 +22,9 @@ public class ActivityCountrySelect extends Activity implements AdapterView.OnIte
 
     @InjectView(R.id.listViewCounties)
     protected ListView listViewCountries;
+
+    @InjectView(R.id.error_window)
+    protected TextView textViewErrorWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +51,27 @@ public class ActivityCountrySelect extends Activity implements AdapterView.OnIte
 
     @OnClick(R.id.buttonConfirm)
     protected void confirm() {
-        //TODO: validation is still missing
-        formData = new FormData();
-        formData.setCountry(adapterCountrySelect.getSelectedCountry());
+        hideErrorMessage();
 
-        final Intent resultIntent = new Intent(this, ActivityForm.class);
-        resultIntent.putExtra("FORM_DATA", formData);
-        startActivity(resultIntent);
+        if (adapterCountrySelect.getSelectedIndex() > 0) {
+            formData = new FormData();
+            formData.setCountry(adapterCountrySelect.getSelectedCountry());
+
+            final Intent resultIntent = new Intent(this, ActivityForm.class);
+            resultIntent.putExtra("FORM_DATA", formData);
+            startActivity(resultIntent);
+        } else {
+            showErrorMessage();
+        }
+    }
+
+    private void hideErrorMessage() {
+        textViewErrorWindow.setVisibility(View.GONE);
+    }
+
+    private void showErrorMessage() {
+        textViewErrorWindow.setVisibility(View.VISIBLE);
+        textViewErrorWindow.setText("Please select country.");
     }
 
     private void addDataToList() {

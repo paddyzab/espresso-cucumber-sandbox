@@ -17,12 +17,22 @@ public class ButtonsSteps {
         onView(ViewMatchers.withId(R.id.buttonLogin)).perform(click());
     }
 
-    @Then("^I click on submit button")
-    public static void I_click_on_submit_button() {
-        onView(ViewMatchers.withId(R.id.buttonLogin)).perform(click());
+    @Then("^I click on confirm button")
+    public static void I_click_on_confirm_button() {
+        onView(ViewMatchers.withId(R.id.buttonConfirm)).perform(click());
     }
 
-    @Then("^I expect login button to be disabled")
+    @Then("^I click on submit button$")
+    public static void I_click_on_submit_button() {
+        onView(ViewMatchers.withId(R.id.buttonSubmit)).perform(click());
+    }
+
+    @Then("^I click on reset form button$")
+    public static void I_click_on_reset_form_button() {
+        onView(ViewMatchers.withId(R.id.buttonReset)).perform(click());
+    }
+
+    @Then("^I expect login button to be disabled$")
     public static void I_expect_login_button_to_be_disabled() {
         onView(withId(R.id.buttonLogin)).check(matches(not(isEnabled())));
     }

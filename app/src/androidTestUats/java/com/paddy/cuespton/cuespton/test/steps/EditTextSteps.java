@@ -25,6 +25,36 @@ public class EditTextSteps {
         onView(withId(R.id.editTextPassword)).perform(clearText(), typeText(password));
     }
 
+    @Then("I type as name (\\S+)")
+    public static void I_type_as_name(final String name) {
+        onView(withId(R.id.editTextName)).perform(clearText(), typeText(name));
+    }
+
+    @Then("I type as last name (\\S+)")
+    public static void I_type_as_last_name(final String lastName) {
+        onView(withId(R.id.editTextLastName)).perform(clearText(), typeText(lastName));
+    }
+
+    @Then("I type as street name (\\S+)")
+    public static void I_type_as_street_name(final String streetName) {
+        onView(withId(R.id.editTextStreet)).perform(clearText(), typeText(streetName));
+    }
+
+    @Then("I type as street number (\\S+)")
+    public static void I_type_as_street_number_name(final String streetNumber) {
+        onView(withId(R.id.editTextStreetNumber)).perform(clearText(), typeText(streetNumber));
+    }
+
+    @Then("I type as city (\\S+)")
+    public static void I_type_as_city(final String city) {
+        onView(withId(R.id.editTextCity)).perform(clearText(), typeText(city));
+    }
+
+    @Then("I type as postal number (\\S+)")
+    public static void I_type_as_postal_number(final String postalCode) {
+        onView(withId(R.id.editTextPostalNumber)).perform(clearText(), typeText(postalCode));
+    }
+
     @Then("^I expect error on login input field \\\"([^\\\"]*)\\\"")
     public static void I_expect_error_on_login_input_field(final String errorMessage) {
         onView(withId(R.id.editTextLogin)).check(matches(withError(errorMessage)));

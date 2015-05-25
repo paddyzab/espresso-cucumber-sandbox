@@ -1,12 +1,12 @@
 package com.paddy.cuespton.cuespton;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class ActivityResult extends ActionBarActivity {
+public class ActivityResult extends Activity {
 
     @InjectView(R.id.textViewResult)
     protected TextView textViewResult;
@@ -22,14 +22,6 @@ public class ActivityResult extends ActionBarActivity {
 
         formData = getIntent().getParcelableExtra("FORM_DATA");
 
-        textViewResult.setText(" Hi: " +
-                formData.getName() + " "
-                + formData.getLastName() + " \n From: "
-                + formData.getCountry() + ", "
-                + formData.getCity() + ", "
-                + formData.getPostalNumber() + ", "
-                + formData.getStreetName() + " "
-                + formData.getStreetNumber() +
-                ".\n And Welcome!");
+        textViewResult.setText("Hi and Welcome " + formData.getName() + " " + formData.getLastName());
     }
 }

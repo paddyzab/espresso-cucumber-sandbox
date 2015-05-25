@@ -55,7 +55,7 @@ dependencies {
     //Testing dependencies
     androidTestCompile 'info.cukes:cucumber-core:1.2.0',
                         'info.cukes:cucumber-java:1.2.0',
-                        'info.cukes:cucumber-android:1.2.0',
+                        'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT',
                         'com.jakewharton.espresso:espresso:1.1-r3',
                         'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
 }
